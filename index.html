@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Perfect Family</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>	<script>
+	
+	
+	
+
+	navTo = function(pInput)
+	{
+		pInput = pInput || "home";
+
+		var toGo = 0;
+
+		switch(pInput)
+		{
+			case "about":
+				if($("#nav_main").css('position') === 'fixed')
+					toGo = $("#about").position().top;
+				else
+					toGo = $("#nav_main").position().top;
+				break;
+			case "projects":
+				toGo = $("#projects").position().top;
+				break;
+			case "blog":
+				toGo = $("#blog").position().top;
+				break;
+			
+		}
+		var test = $("#projects").position();
+
+		if(toGo == 0 && pInput != "home")
+			return;
+
+		autoScroll = true;
+
+		$("html, body").animate({scrollTop: toGo});
+		$("html, body").promise().done(function(){
+			autoScroll = false;
+			checkPos();
+		});
+	}
+	</script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<h1>Perfect Family</h1>
+			<h2>Live. Die. Kill.</h2>
+		</div>
+		
+	</header>
+
+	<div id="intro">
+	<table>
+		
+						<td id="introtext">
+Perfect
+
+</td>
+			<td id="logoImage">
+				<img src="teddy.gif" alt=""/>
+			</td>
+
+			<td id="introtext">
+Family
+
+</td>
+			
+		</tr>
+	</table>
+	</div>
+	<nav id="nav_main">
+		
+		<a class="about" onclick="navTo('about');">About</a>
+		<a class="projects" onclick="navTo('projects');">Looks</a>
+		<a class="other" onclick="navTo('blog');">Play</a>
+		
+	</nav>
+	<section id="about" style="clear: both;">
+			<p><strong>Perfect Family</strong> is a twine horror game loosely based on Stephen King's novel 'Pet Semetary'.</p>
+		<div class="leftImage">
+			<img src="text.png">
+		</div>
+			<p>The story starts out calm and joyful. You are a 3 year old, and you've just moved into a new house with your family. You have a smart father, a kind mother, and a spirited older sister.</p>
+			<p>You go through a couple days of playing in, and around the house. You go outside and chase butterflys, you draw with your favorite crayons, you sing along with your father. However, eventually, <strong>you die.</strong> It's technically your choice how, but believe me, it's inevitable. </p>
+			<p>Luckily! You're not gone for long. Your father buries you in a special cemetary and within a night, you're back. But... you're different. You're angry. You're violent. You're <em>vengeful.  </em></p>
+	</section>
+	<hr/>
+	<section id="projects">
+		<p>I intend to use various skills I have and incorporate them into my game. </p>
+		<div id="projectContainer">
+			<article class="project">
+				<h5>Adobe Illustrator</h5>
+				<div class="pImage" style="background-image: url('portrait.png');">
+				</div>
+				<p>Even though it's a text-based game, I intened to have a lot of art. Although I love the piskel art we've been using, I intend to add some graphics using my skills with line art. </p>
+				<a href="http://people.ucls.uchicago.edu/~mpotter/11th/imageProcessing2/" target="_blank">See &raquo;</a>
+			</article>
+			<article class="project">
+				<h5>Banjo</h5>
+				<div class="pImage" style="background-image: url('banjo.png');">
+				</div>
+				<p>I play banjo! And I want to record a bit a music for the game. </p>
+				<a href="https://soundcloud.com/maeve-potter" target="_blank">Take a listen &raquo;</a>
+			</article>
+			
+		</div>
+	</section>
+	<hr/>
+
+<section id="blog">
+		<div class="leftImage" >
+			<img src="baby.jpg" alt="A photo of Maeve in her natural habitat." />
+		</div>
+		<p>Game play in twine is pretty simple. The situation is descirbed to you, and you decide what to do based on the choices offered.</p>
+    <p>At the beginning of the game, you'll get to make simple choices. Like which fun activities for the day, and wether to throw a tantrum when it's bed time. Your choices will also affect your relationship with your parents.</p>
+    <P>After you die however, your choices become a lot more difficult. <strong>The goal of the game is to kill your family.</strong> The game will encourage you to this, and it is what will get you the win screen. However, do you have the heart to do this? Or will you let yourself be stopped, now knowing what consequences it will bring.</P>
+	</section>
+	<hr/>
+	
+	<footer>
+		<img src="teddy.gif"/>
+		2017<br/>Maeve Potter
+	</footer>
+
+	
+	
+</body>
+</html>
